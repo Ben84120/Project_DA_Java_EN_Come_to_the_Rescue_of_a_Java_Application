@@ -10,10 +10,6 @@ import java.util.List;
  * If no data is available, return an empty List 
  */
 public interface ISymptomReader {
-	/**
-
-	 * 
-	 * 
-	 */
+	
 	List<String> GetSymptoms();
 }
