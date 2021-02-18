@@ -6,15 +6,15 @@ import java.util.TreeMap;
 
 public class AnalyticsCounter {
 
+	/**
+	 * main method for launching the program
+	 * @param args 
+	 * @throws Exception
+	 */
 	public static void main(String args[]) throws Exception {
 
-		/**
-		 * 
-		 * @param Main function of the program
-		 */
 		AnalyticsCounter counter = new AnalyticsCounter();
 		List<String> symptoms = counter.readingFile("Project02Eclipse/symptoms.txt");
-		System.out.println(symptoms.toString());
 		Map<String, Integer> map = counter.cumputingSymptoms(symptoms);
 		counter.saving(map);
 
@@ -26,12 +26,11 @@ public class AnalyticsCounter {
 	 * @param file the input file of symptoms
 	 * @return list of symptoms
 	 */
-	public List<String> readingFile(String file) {
+	private List<String> readingFile(String file) {
 		ISymptomReader reader = new ReadSymptomDataFromFile(file);
-		return reader.GetSymptoms();
+		return reader.getSymptoms();
 
 	}
-
 	/**
 	 * method allow to browse the list of symptoms, build the Map and sorting it.
 	 * 
@@ -39,7 +38,7 @@ public class AnalyticsCounter {
 	 * @return Map symptoms with occurrences
 	 */
 
-	public Map<String, Integer> cumputingSymptoms(List<String> symptoms) {
+	private Map<String, Integer> cumputingSymptoms(List<String> symptoms) {
 		Map<String, Integer> map = new TreeMap<>();
 		for (String symptom : symptoms) {
 			if (symptom != null) {
@@ -63,7 +62,7 @@ public class AnalyticsCounter {
 	 * 
 	 * @param map Map symptoms with occurrences
 	 */
-	public void saving(Map<String, Integer> map) {
+	private void saving(Map<String, Integer> map) {
 
 		IWriterMap writer = new WriteFromDataMap();
 		writer.ecrireResult(map);

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * 
+ * Implementation of the interface <code> IWriterMap </code>
  * @author bvach
  *
  */
@@ -14,7 +14,7 @@ import java.util.Map;
 public class WriteFromDataMap implements IWriterMap {
 
 	public WriteFromDataMap() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class WriteFromDataMap implements IWriterMap {
 		
 		BufferedWriter writer = null;
 		try {
-			writer = new BufferedWriter(new FileWriter("Project02Eclipse/results.txt"));
+			writer = new BufferedWriter(new FileWriter("Project02Eclipse/results.out"));
 			
 			
 
@@ -34,14 +34,14 @@ public class WriteFromDataMap implements IWriterMap {
 			}
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} finally {
 			try {
 				if (writer != null)
 					writer.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			

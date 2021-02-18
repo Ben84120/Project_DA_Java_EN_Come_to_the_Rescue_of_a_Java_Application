@@ -11,5 +11,9 @@ import java.util.List;
  */
 public interface ISymptomReader {
 	
-	List<String> GetSymptoms();
+	/**
+	 * 
+	 * @return list of symptoms
+	 */
+	List<String> getSymptoms();
 }
